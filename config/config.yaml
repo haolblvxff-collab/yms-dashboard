@@ -1,0 +1,27 @@
+database:
+  type: postgresql
+  host: localhost
+  port: 5432
+  name: yms_db
+  user: postgres
+  password: ${DB_PASSWORD}  # 使用环境变量
+
+analysis:
+  default_correlation_method: spearman
+  significance_level: 0.05
+  min_correlation: 0.3
+
+visualization:
+  wafer_diameter: 300  # mm
+  default_output_format: html
+  plot_width: 800
+  plot_height: 600
+
+spc:
+  control_limits_sigma: 3
+  western_electric_rules_enabled: true
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: logs/yms.log
